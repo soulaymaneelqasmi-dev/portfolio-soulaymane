@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Soulaymane Elqasmi — Développeur web junior</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1f4fc;--surface:#fff;--ink:#0e1633;--muted:#4a557a;--cobalt:#1f3fbf;--on-cobalt:#fff;--teal:#0f8a78;--line:#cfd7ee;--tile:rgba(31,63,191,.10);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1122;--surface:#131b35;--ink:#eef1fb;--muted:#a3adcf;--cobalt:#7d96ff;--on-cobalt:#0b1122;--teal:#4fd1bb;--line:#26315a;--tile:rgba(125,150,255,.12);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b1122;--surface:#131b35;--ink:#eef1fb;--muted:#a3adcf;--cobalt:#7d96ff;--on-cobalt:#0b1122;--teal:#4fd1bb;--line:#26315a;--tile:rgba(125,150,255,.12);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "Instrument Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Instrument Sans",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.nav b{font-family:"Bricolage Grotesque",sans-serif;font-size:18px}
+.nav nav{display:flex;gap:18px;align-items:center;font-size:15px;overflow-x:auto}
+.nav nav a{text-decoration:none;color:var(--muted);white-space:nowrap}
+.nav nav a:hover{color:var(--ink)}
+.tbtn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 12px;font:500 14px "Instrument Sans",sans-serif;cursor:pointer}
+.hero{position:relative;overflow:hidden;padding:84px 0 72px;background:
+ conic-gradient(from 90deg at 50% 50%,var(--tile) 25%,transparent 0 50%,var(--tile) 0 75%,transparent 0) 0 0/56px 56px}
+.hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(44px,8vw,88px);font-weight:800;letter-spacing:-.03em}
+.role{font-size:clamp(19px,2.6vw,24px);margin:18px 0 8px;color:var(--cobalt);font-weight:600}
+.lede{max-width:52ch;color:var(--muted);margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;padding:12px 22px;border-radius:10px;font-weight:600;border:2px solid var(--cobalt)}
+.btn.p{background:var(--cobalt);color:var(--on-cobalt)}
+.btn.s{color:var(--cobalt);background:transparent}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:15px;margin-bottom:22px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--teal)}
+.avatar{aspect-ratio:3.5/4.5;max-width:300px;justify-self:end;width:100%;border-radius:140px 140px 18px 18px;background:var(--cobalt);color:var(--on-cobalt);display:grid;place-items:center;font:800 76px "Bricolage Grotesque",sans-serif;border:6px solid var(--surface);box-shadow:0 0 0 2px var(--cobalt)}
+section.sec{padding:76px 0;border-top:1px solid var(--line)}
+section.sec h2{font-size:clamp(30px,5vw,44px);margin-bottom:30px;letter-spacing:-.02em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.proj{display:grid;gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:26px}
+.card h3{font-size:24px;margin-bottom:8px}
+.card p{margin:0 0 14px;color:var(--muted)}
+.card ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.card li{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:4px 10px;font-size:14.5px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.skills h3{font-size:18px;margin-bottom:12px;color:var(--cobalt)}
+.chip{display:inline-block;margin:0 8px 8px 0;padding:6px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-weight:500;font-size:15px;cursor:default;transition:background .15s,color .15s}
+.chip:hover{background:var(--cobalt);color:var(--on-cobalt)}
+.edu{border-left:3px solid var(--cobalt);padding-left:20px;margin-bottom:26px}
+.edu h3{font-size:21px}.edu span{color:var(--muted);font-size:15.5px}
+.contact{display:grid;gap:12px;max-width:520px}
+.contact input,.contact textarea{width:100%;padding:13px 14px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit}
+.contact button{cursor:pointer;font:600 17px "Instrument Sans",sans-serif}
+.links{display:flex;gap:18px;flex-wrap:wrap;margin-top:24px}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+@media (max-width:760px){.hero .wrap,.two{grid-template-columns:1fr}.avatar{justify-self:start;max-width:200px;order:-1}.hero{padding-top:48px}.nav nav a.hide{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/htm@3.1.1/dist/htm.umd.js"></script>
+<script>
+const { useState, useEffect } = React;
+const html = htm.bind(React.createElement);
+
+/* ====== عدّل بياناتك هنا / Modifiez vos informations ici ====== */
+const DATA = {
+  name: "Soulaymane Elqasmi",
+  initials: "SE",
+  role: "Développeur web junior",
+  tagline: "Étudiant en 2ᵉ année DEVOWFS à l’OFPPT – ISTA NTIC, à Safi. Je crée des applications web modernes et interactives.",
+  email: "soulaymaneelqasmidev@gmail.com",
+  phone: "07 71 98 43 90",
+  city: "Safi, Maroc",
+  links: { GitHub: "", LinkedIn: "" }, // ex: "https://github.com/votre-nom"
+  about: [
+    "Passionné par le développement web et les nouvelles technologies, je m’intéresse à la création d’applications web modernes et interactives.",
+    "Curieux, motivé et sérieux, je veux développer mes compétences techniques et acquérir une première expérience professionnelle au sein d’une entreprise."
+  ],
+  projects: [
+    { title: "Blog Web Application", text: "Une plateforme de blog complète, avec gestion des articles et des utilisateurs.", feats: ["Ajout, modification, suppression d’articles", "Authentification", "Navigation multi-pages"], link: "" },
+    { title: "To-Do List Application", text: "Une application pour organiser ses tâches au quotidien.", feats: ["Ajout, modification, suppression", "Recherche et filtrage", "Tâches terminées"], link: "" },
+    { title: "Movie Website", text: "Un site dédié aux films, avec une interface responsive.", feats: ["Affiches des films", "Recherche et filtre par catégorie", "Titre, année et note"], link: "" }
+  ],
+  skills: {
+    "Front-end": ["HTML5", "CSS3", "JavaScript", "React.js", "Bootstrap"],
+    "Back-end": ["PHP"],
+    "Base de données": ["MySQL"],
+    "Outils": ["Git", "GitHub"],
+    "Modélisation": ["UML"]
+  },
+  langs: [["Arabe", "Langue maternelle"], ["Français", "Intermédiaire"], ["Anglais", "Intermédiaire"]]
+};
+
+function useTheme() {
+  const [t, setT] = useState(null);
+  useEffect(() => { if (t) document.documentElement.setAttribute("data-theme", t); }, [t]);
+  const isDark = t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return [isDark, () => setT(isDark ? "light" : "dark")];
+}
+
+function Nav() {
+  const [dark, toggle] = useTheme();
+  return html`<header class="nav"><div class="wrap">
+    <b>${DATA.initials}.</b>
+    <nav aria-label="Navigation principale">
+      <a href="#apropos">À propos</a><a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a><a class="hide" href="#formation">Formation</a><a href="#contact">Contact</a>
+      <button class="tbtn" onClick=${toggle} aria-label="Changer le thème">${dark ? "Clair" : "Sombre"}</button>
+    </nav></div></header>`;
+}
+
+function Hero() {
+  return html`<section class="hero"><div class="wrap">
+    <div>
+      <span class="badge"><span class="dot"></span>Disponible pour un stage en développement web</span>
+      <h1>${DATA.name}</h1>
+      <p class="role">${DATA.role}</p>
+      <p class="lede">${DATA.tagline}</p>
+      <div class="btns">
+        <a class="btn p" href="#projets">Voir mes projets</a>
+        <a class="btn s" href="#contact">Me contacter</a>
+      </div>
+    </div>
+    <div class="avatar" role="img" aria-label="Photo à ajouter">${DATA.initials}</div>
+  </div></section>`;
+}
+
+function About() {
+  return html`<section class="sec" id="apropos"><div class="wrap two">
+    <h2>À propos de moi</h2>
+    <div>${DATA.about.map((p, i) => html`<p key=${i} style=${{ marginTop: i ? 14 : 0 }}>${p}</p>`)}
+      <p style=${{ color: "var(--muted)", marginTop: 18 }}>${DATA.city}</p></div>
+  </div></section>`;
+}
+
+function Projects() {
+  return html`<section class="sec" id="projets"><div class="wrap">
+    <h2>Projets réalisés</h2>
+    <div class="proj">${DATA.projects.map(p => html`
+      <article class="card" key=${p.title}>
+        <h3>${p.title}</h3><p>${p.text}</p>
+        <ul>${p.feats.map(f => html`<li key=${f}>${f}</li>`)}</ul>
+        ${p.link && html`<p style=${{ margin: "16px 0 0" }}><a href=${p.link} target="_blank" rel="noopener">Voir le projet</a></p>`}
+      </article>`)}</div>
+  </div></section>`;
+}
+
+function Skills() {
+  return html`<section class="sec" id="competences"><div class="wrap">
+    <h2>Compétences techniques</h2>
+    <div class="skills">${Object.entries(DATA.skills).map(([k, v]) => html`
+      <div key=${k}><h3>${k}</h3>${v.map(s => html`<span class="chip" key=${s}>${s}</span>`)}</div>`)}</div>
+    <h3 style=${{ fontSize: 18, margin: "34px 0 12px", color: "var(--cobalt)" }}>Langues</h3>
+    ${DATA.langs.map(([l, n]) => html`<span class="chip" key=${l}>${l} · ${n}</span>`)}
+  </div></section>`;
+}
+
+function Education() {
+  return html`<section class="sec" id="formation"><div class="wrap two">
+    <h2>Formation</h2>
+    <div>
+      <div class="edu"><h3>OFPPT – ISTA NTIC</h3><span>Développement Web Full Stack (DEVOWFS), 2ᵉ année</span></div>
+      <div class="edu"><h3>Baccalauréat</h3><span>Sciences Physiques</span></div>
+      <div class="edu"><h3>Expérience</h3><span>À la recherche d’une première expérience professionnelle dans le cadre d’un stage.</span></div>
+    </div>
+  </div></section>`;
+}
+
+function Contact() {
+  const [f, setF] = useState({ name: "", msg: "" });
+  const send = () => {
+    const s = encodeURIComponent("Contact depuis votre portfolio — " + f.name);
+    const b = encodeURIComponent(f.msg + "\n\n" + f.name);
+    window.location.href = `mailto:${DATA.email}?subject=${s}&body=${b}`;
+  };
+  const links = Object.entries(DATA.links).filter(([, u]) => u);
+  return html`<section class="sec" id="contact"><div class="wrap two">
+    <div><h2>Contact</h2>
+      <p style=${{ color: "var(--muted)" }}>Un stage, une question, un projet ? Écrivez-moi.</p>
+      <p><a href=${"mailto:" + DATA.email}>${DATA.email}</a><br/>${DATA.phone}</p>
+      <div class="links">${links.map(([k, u]) => html`<a key=${k} href=${u} target="_blank" rel="noopener">${k}</a>`)}</div>
+    </div>
+    <div class="contact">
+      <input placeholder="Votre nom" aria-label="Votre nom" value=${f.name} onInput=${e => setF({ ...f, name: e.target.value })} />
+      <textarea rows="5" placeholder="Votre message" aria-label="Votre message" value=${f.msg} onInput=${e => setF({ ...f, msg: e.target.value })}></textarea>
+      <button class="btn p" type="button" onClick=${send} disabled=${!f.name || !f.msg}>Envoyer par e-mail</button>
+    </div>
+  </div></section>`;
+}
+
+function App() {
+  return html`<${React.Fragment}><${Nav}/><main><${Hero}/><${About}/><${Projects}/><${Skills}/><${Education}/><${Contact}/></main>
+    <footer><div class="wrap">© ${new Date().getFullYear()} ${DATA.name}</div></footer><//>`;
+}
+ReactDOM.createRoot(document.getElementById("root")).render(html`<${App}/>`);
+</script>
+</body>
+</html>
